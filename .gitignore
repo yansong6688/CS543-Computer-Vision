@@ -4,3 +4,4 @@
 *.pdf
 /MP1/assignment1_materials
 .ipynb_checkpoints
+*/.ipynb_checkpoints/*
