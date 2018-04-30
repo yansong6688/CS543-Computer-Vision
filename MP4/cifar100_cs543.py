@@ -28,6 +28,10 @@ import torch
 import torch.utils.data
 import torchvision
 import torchvision.transforms as transforms
+from torch.autograd import Variable
+import torch.nn as nn
+import torch.nn.functional as F
+import torch.optim as optim
 
 from cs543_dataset import CIFAR100_CS543
 
@@ -106,11 +110,14 @@ labels while all the labels in the test set are set to 0.
 # normalization parameters as train_transform
 # You shouldn't have any data augmentation in test_transform (val or test data is never augmented).
 # ---------------------
+train_transform = transforms.Compose([
+    transforms.RandomHorizontalFlip(),
+    transforms.ToTensor(),
+    transforms.Normalize(mean=(0.50787758, 0.48716971, 0.44120977), std=(0.26711263, 0.25646897, 0.27624937))])
 
-train_transform = transforms.Compose(
-    [transforms.ToTensor()])
-test_transform = transforms.Compose(
-    [transforms.ToTensor()])
+test_transform = transforms.Compose([
+    transforms.ToTensor(),
+    transforms.Normalize(mean=(0.50787758, 0.48716971, 0.44120977), std=(0.26711263, 0.25646897, 0.27624937))])
 # ---------------------
 
 trainset = CIFAR100_CS543(root=PATH_TO_CIFAR100_CS543, fold="train",
@@ -132,7 +139,16 @@ testloader = torch.utils.data.DataLoader(testset, batch_size=TEST_BS,
 print("Test set size: "+str(len(testset)))
 
 # The 100 classes for CIFAR100
-classes = ['apple', 'aquarium_fish', 'baby', 'bear', 'beaver', 'bed', 'bee', 'beetle', 'bicycle', 'bottle', 'bowl', 'boy', 'bridge', 'bus', 'butterfly', 'camel', 'can', 'castle', 'caterpillar', 'cattle', 'chair', 'chimpanzee', 'clock', 'cloud', 'cockroach', 'couch', 'crab', 'crocodile', 'cup', 'dinosaur', 'dolphin', 'elephant', 'flatfish', 'forest', 'fox', 'girl', 'hamster', 'house', 'kangaroo', 'keyboard', 'lamp', 'lawn_mower', 'leopard', 'lion', 'lizard', 'lobster', 'man', 'maple_tree', 'motorcycle', 'mountain', 'mouse', 'mushroom', 'oak_tree', 'orange', 'orchid', 'otter', 'palm_tree', 'pear', 'pickup_truck', 'pine_tree', 'plain', 'plate', 'poppy', 'porcupine', 'possum', 'rabbit', 'raccoon', 'ray', 'road', 'rocket', 'rose', 'sea', 'seal', 'shark', 'shrew', 'skunk', 'skyscraper', 'snail', 'snake', 'spider', 'squirrel', 'streetcar', 'sunflower', 'sweet_pepper', 'table', 'tank', 'telephone', 'television', 'tiger', 'tractor', 'train', 'trout', 'tulip', 'turtle', 'wardrobe', 'whale', 'willow_tree', 'wolf', 'woman', 'worm']
+classes = ['apple', 'aquarium_fish', 'baby', 'bear', 'beaver', 'bed', 'bee', 'beetle', 'bicycle', 'bottle', 'bowl',
+           'boy', 'bridge', 'bus', 'butterfly', 'camel', 'can', 'castle', 'caterpillar', 'cattle', 'chair',
+           'chimpanzee', 'clock', 'cloud', 'cockroach', 'couch', 'crab', 'crocodile', 'cup', 'dinosaur', 'dolphin',
+           'elephant', 'flatfish', 'forest', 'fox', 'girl', 'hamster', 'house', 'kangaroo', 'keyboard', 'lamp',
+           'lawn_mower', 'leopard', 'lion', 'lizard', 'lobster', 'man', 'maple_tree', 'motorcycle', 'mountain',
+           'mouse', 'mushroom', 'oak_tree', 'orange', 'orchid', 'otter', 'palm_tree', 'pear', 'pickup_truck',
+           'pine_tree', 'plain', 'plate', 'poppy', 'porcupine', 'possum', 'rabbit', 'raccoon', 'ray', 'road',
+           'rocket', 'rose', 'sea', 'seal', 'shark', 'shrew', 'skunk', 'skyscraper', 'snail', 'snake', 'spider',
+           'squirrel', 'streetcar', 'sunflower', 'sweet_pepper', 'table', 'tank', 'telephone', 'television', 'tiger',
+           'tractor', 'train', 'trout', 'tulip', 'turtle', 'wardrobe', 'whale', 'willow_tree', 'wolf', 'woman', 'worm']
 
 
 ########################################################################
@@ -150,14 +166,12 @@ classes = ['apple', 'aquarium_fish', 'baby', 'bear', 'beaver', 'bed', 'bee', 'be
 # This is a good resource for developing a CNN for classification:
 # http://cs231n.github.io/convolutional-networks/#layers
 
-from torch.autograd import Variable
-import torch.nn as nn
-import torch.nn.functional as F
+
 
 class BaseNet(nn.Module):
     def __init__(self):
         super(BaseNet, self).__init__()
-        
+
         # <<TODO#3>> Add more conv layers with increasing 
         # output channels
         # <<TODO#4>> Add normalization layers after conv
@@ -169,28 +183,119 @@ class BaseNet(nn.Module):
         # (right now set to 5) in all conv layers.
         # Do not have a maxpool layer after every conv layer in your
         # deeper network as it leads to too much loss of information.
-
+        '''
         self.conv1 = nn.Conv2d(3, 6, 5)
         self.pool = nn.MaxPool2d(2, 2)
         self.conv2 = nn.Conv2d(6, 16, 5)
-
+        '''
         # <<TODO#3>> Add more linear (fc) layers
         # <<TODO#4>> Add normalization layers after linear and
         # experiment inserting them before or after ReLU (nn.BatchNorm1d)
         # More on nn.sequential:
         # http://pytorch.org/docs/master/nn.html#torch.nn.Sequential
-        
+        '''
         self.fc_net = nn.Sequential(
             nn.Linear(16 * 5 * 5, TOTAL_CLASSES//2),
             nn.ReLU(inplace=True),
             nn.Linear(TOTAL_CLASSES//2, TOTAL_CLASSES),
         )
+        '''
+
+        self.conv1 = nn.Conv2d(3, 64, 3, padding=1)
+        self.bn1 = nn.BatchNorm2d(64)
+
+        self.conv2 = nn.Conv2d(64, 64, 3, padding=1)
+        self.bn2 = nn.BatchNorm2d(64)
+        self.conv3 = nn.Conv2d(64, 64, 3, padding=1)
+        self.bn3 = nn.BatchNorm2d(64)
+
+        self.conv4 = nn.Conv2d(64, 64, 3, padding=1)
+        self.bn4 = nn.BatchNorm2d(64)
+        self.conv5 = nn.Conv2d(64, 64, 3, padding=1)
+        self.bn5 = nn.BatchNorm2d(64)
+
+        self.conv6 = nn.Conv2d(64, 128, 3, padding=1)
+        self.bn6 = nn.BatchNorm2d(64)
+        self.conv7 = nn.Conv2d(128, 128, 3, padding=1)
+        self.bn7 = nn.BatchNorm2d(128)
+        self.shortcut1 = nn.Sequential(
+                nn.Conv2d(64, 128, 1, padding=0, bias=False),
+                nn.BatchNorm2d(128)
+        )
+        self.pool1 = nn.MaxPool2d(2, 2)
+
+        self.conv8 = nn.Conv2d(128, 128, 3, padding=1)
+        self.bn8 = nn.BatchNorm2d(128)
+        self.conv9 = nn.Conv2d(128, 128, 3, padding=1)
+        self.bn9 = nn.BatchNorm2d(128)
+
+        self.conv10 = nn.Conv2d(128, 128, 3, padding=1)
+        self.bn10 = nn.BatchNorm2d(128)
+        self.conv11 = nn.Conv2d(128, 128, 3, padding=1)
+        self.bn11 = nn.BatchNorm2d(128)
+
+        self.conv12 = nn.Conv2d(128, 256, 3, padding=1)
+        self.bn12 = nn.BatchNorm2d(256)
+        self.conv13 = nn.Conv2d(256, 256, 3, padding=1)
+        self.bn13 = nn.BatchNorm2d(256)
+        self.shortcut2 = nn.Sequential(
+                nn.Conv2d(128, 256, 1, padding=0, bias=False),
+                nn.BatchNorm2d(256)
+        )
+        self.pool2 = nn.MaxPool2d(2, 2)
+
+        self.conv14 = nn.Conv2d(256, 256, 3, padding=1)
+        self.bn14 = nn.BatchNorm2d(256)
+        self.conv15 = nn.Conv2d(256, 256, 3, padding=1)
+        self.bn15 = nn.BatchNorm2d(256)
+
+        self.conv16 = nn.Conv2d(256, 256, 3, padding=1)
+        self.bn16 = nn.BatchNorm2d(256)
+        self.conv17 = nn.Conv2d(256, 256, 3, padding=1)
+        self.bn17 = nn.BatchNorm2d(256)
+
+        self.conv18 = nn.Conv2d(256, 512, 3, padding=1)
+        self.bn18 = nn.BatchNorm2d(512)
+        self.conv19 = nn.Conv2d(512, 512, 3, padding=1)
+        self.bn19 = nn.BatchNorm2d(512)
+        self.shortcut3 = nn.Sequential(
+                nn.Conv2d(256, 512, 1, padding=0, bias=False),
+                nn.BatchNorm2d(512)
+        )
+
+        self.pool3 = nn.MaxPool2d(2, 2)
+
+        self.conv20 = nn.Conv2d(512, 512, 3, padding=1)
+        self.bn20 = nn.BatchNorm2d(512)
+        self.conv21 = nn.Conv2d(512, 512, 3, padding=1)
+        self.bn21 = nn.BatchNorm2d(512)
+
+        self.conv22 = nn.Conv2d(512, 512, 3, padding=1)
+        self.bn22 = nn.BatchNorm2d(512)
+        self.conv23 = nn.Conv2d(512, 512, 3, padding=1)
+        self.bn23 = nn.BatchNorm2d(512)
+
+        self.conv24 = nn.Conv2d(512, 1024, 3, padding=1)
+        self.bn24 = nn.BatchNorm2d(1024)
+        self.conv25 = nn.Conv2d(1024, 1024, 3, padding=1)
+        self.bn25 = nn.BatchNorm2d(1024)
+        self.shortcut4 = nn.Sequential(
+                nn.Conv2d(512, 1024, 1, padding=0, bias=False),
+                nn.BatchNorm2d(1024))
+        self.pool4 = nn.AvgPool2d(4, 4)
+
+        self.fc_net = nn.Sequential(
+                nn.Linear(1024, 512),
+                nn.ReLU(inplace=True),
+                nn.Linear(512, TOTAL_CLASSES)
+        )
+
 
     def forward(self, x):
 
         # <<TODO#3&#4>> Based on the above edits, you'll have
         # to edit the forward pass description here.
-
+        '''
         x = self.pool(F.relu(self.conv1(x)))
         # Output size = 28//2 x 28//2 = 14 x 14
 
@@ -201,11 +306,70 @@ class BaseNet(nn.Module):
         # This will help you design your own deeper network
         x = x.view(-1, 16 * 5 * 5)
         x = self.fc_net(x)
-
+        '''
         # No softmax is needed as the loss function in step 3
         # takes care of that
-        
+
+        x = F.relu(self.bn1(self.conv1(x)))
+
+        tempx = F.relu(self.bn2(self.conv2(x)))
+        tempx = F.relu(self.bn3(self.conv2(tempx)))
+        assert tempx.size() == x.size()
+        x = tempx + x
+
+        tempx = F.relu(self.bn4(self.conv4(x)))
+        tempx = F.relu(self.bn5(self.conv5(tempx)))
+        x = tempx + x
+
+        tempx = F.relu(self.bn6(self.conv6(x)))
+        tempx = F.relu(self.bn7(self.conv7(tempx)))
+        x = tempx + self.shortcut1(x)
+        x = self.pool1(x)
+
+        tempx = F.relu(self.bn8(self.conv8(x)))
+        tempx = F.relu(self.bn9(self.conv9(tempx)))
+        x = tempx + x
+
+        tempx = F.relu(self.bn10(self.conv10(x)))
+        tempx = F.relu(self.bn11(self.conv11(tempx)))
+        x = tempx + x
+
+        tempx = F.relu(self.bn12(self.conv12(x)))
+        tempx = F.relu(self.bn13(self.conv13(tempx)))
+        x = tempx + self.shortcut2(x)
+        x = self.pool2(x)
+
+        tempx = F.relu(self.bn14(self.conv14(x)))
+        tempx = F.relu(self.bn15(self.conv15(tempx)))
+        x = tempx + x
+
+        tempx = F.relu(self.bn16(self.conv16(x)))
+        tempx = F.relu(self.bn17(self.conv17(tempx)))
+        x = tempx + x
+
+        tempx = F.relu(self.bn18(self.conv18(x)))
+        tempx = F.relu(self.bn19(self.conv19(tempx)))
+        x = tempx + self.shortcut3(x)
+        x = self.pool3(x)
+
+        tempx = F.relu(self.bn20(self.conv20(x)))
+        tempx = F.relu(self.bn21(self.conv21(tempx)))
+        x = tempx + x
+
+        tempx = F.relu(self.bn22(self.conv22(x)))
+        tempx = F.relu(self.bn23(self.conv23(tempx)))
+        x = tempx + x
+
+        tempx = F.relu(self.bn24(self.conv24(x)))
+        tempx = F.relu(self.bn25(self.conv25(tempx)))
+        x = tempx + self.shortcut4(x)
+        x = self.pool4(x)
+
+        x = x.view(-1, 1024)
+        x = self.fc_net(x)
+
         return x
+
 
 # Create an instance of the nn.module class defined above:
 net = BaseNet()
@@ -223,7 +387,6 @@ if IS_GPU:
 # implementation. That's why we don't use a softmax in our model
 # definition.
 
-import torch.optim as optim
 criterion = nn.CrossEntropyLoss()
 
 # Tune the learning rate.
@@ -264,13 +427,13 @@ for epoch in range(EPOCHS):  # loop over the dataset multiple times
         outputs = net(inputs)
         loss = criterion(outputs, labels)
         loss.backward()
-        optimizer.step()
+        optimizer.step()        # update parameters
 
         # print statistics
         running_loss += loss.data[0]
     
     # Normalizing the loss by the total number of train batches
-    running_loss/=len(trainloader)
+    running_loss /= len(trainloader)
     print('[%d] loss: %.3f' %
           (epoch + 1, running_loss))
 
@@ -296,7 +459,7 @@ for epoch in range(EPOCHS):  # loop over the dataset multiple times
 plt.subplot(2, 1, 1)
 plt.ylabel('Train loss')
 plt.plot(np.arange(EPOCHS), train_loss_over_epochs, 'k-')
-plt.title('(NetID) train loss and val accuracy')
+plt.title('nie9 train loss and val accuracy')
 plt.xticks(np.arange(EPOCHS, dtype=int))
 plt.grid(True)
 
@@ -336,7 +499,7 @@ for data in testloader:
     predictions.extend(list(predicted.cpu().numpy()))
     total += labels.size(0)
 
-with open('submission_netid.csv', 'w') as csvfile:
+with open('submission_nie9.csv', 'w') as csvfile:
     wr = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
     wr.writerow(["Id", "Prediction1"])
     for l_i, label in enumerate(predictions):

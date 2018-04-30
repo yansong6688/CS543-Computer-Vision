@@ -50,11 +50,4 @@
     </entry>
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.6.2 (/Anaconda3/anaconda/envs/tensorflow/bin/python)" project-jdk-type="Python SDK" />
-  <component name="PyConsoleOptionsProvider">
-    <option name="myPythonConsoleState">
-      <console-settings sdk-home="/Library/Frameworks/Python.framework/Versions/3.6/bin/python3.6">
-        <option name="mySdkHome" value="/Library/Frameworks/Python.framework/Versions/3.6/bin/python3.6" />
-      </console-settings>
-    </option>
-  </component>
 </project>
