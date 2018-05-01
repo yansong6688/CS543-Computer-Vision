@@ -185,7 +185,7 @@ class BaseNet(nn.Module):
         # (right now set to 5) in all conv layers.
         # Do not have a maxpool layer after every conv layer in your
         # deeper network as it leads to too much loss of information.
-
+        '''
         self.conv1 = nn.Conv2d(3, 6, 5)
         self.pool = nn.MaxPool2d(2, 2)
         self.conv2 = nn.Conv2d(6, 16, 5)
@@ -203,22 +203,22 @@ class BaseNet(nn.Module):
         )
         '''
 
-        self.conv1 = nn.Conv2d(3, 64, 3, padding=1)
+        self.conv1 = nn.Conv2d(3, 64, 5)
         self.bn1 = nn.BatchNorm2d(64)
 
-        self.conv2 = nn.Conv2d(64, 64, 3, padding=1)
+        self.conv2 = nn.Conv2d(64, 64, 5)
         self.bn2 = nn.BatchNorm2d(64)
-        self.conv3 = nn.Conv2d(64, 64, 3, padding=1)
+        self.conv3 = nn.Conv2d(64, 64, 5)
         self.bn3 = nn.BatchNorm2d(64)
 
-        self.conv4 = nn.Conv2d(64, 64, 3, padding=1)
+        self.conv4 = nn.Conv2d(64, 64, 5)
         self.bn4 = nn.BatchNorm2d(64)
-        self.conv5 = nn.Conv2d(64, 64, 3, padding=1)
+        self.conv5 = nn.Conv2d(64, 64, 5)
         self.bn5 = nn.BatchNorm2d(64)
 
-        self.conv6 = nn.Conv2d(64, 128, 3, padding=1)
+        self.conv6 = nn.Conv2d(64, 128, 5)
         self.bn6 = nn.BatchNorm2d(128)
-        self.conv7 = nn.Conv2d(128, 128, 3, padding=1)
+        self.conv7 = nn.Conv2d(128, 128, 5)
         self.bn7 = nn.BatchNorm2d(128)
         self.shortcut1 = nn.Sequential(
                 nn.Conv2d(64, 128, 1, padding=0, bias=False),
@@ -226,19 +226,19 @@ class BaseNet(nn.Module):
         )
         self.pool1 = nn.MaxPool2d(2, 2)
 
-        self.conv8 = nn.Conv2d(128, 128, 3, padding=1)
+        self.conv8 = nn.Conv2d(128, 128, 5)
         self.bn8 = nn.BatchNorm2d(128)
-        self.conv9 = nn.Conv2d(128, 128, 3, padding=1)
+        self.conv9 = nn.Conv2d(128, 128, 5)
         self.bn9 = nn.BatchNorm2d(128)
 
-        self.conv10 = nn.Conv2d(128, 128, 3, padding=1)
+        self.conv10 = nn.Conv2d(128, 128, 5)
         self.bn10 = nn.BatchNorm2d(128)
-        self.conv11 = nn.Conv2d(128, 128, 3, padding=1)
+        self.conv11 = nn.Conv2d(128, 128, 5)
         self.bn11 = nn.BatchNorm2d(128)
 
-        self.conv12 = nn.Conv2d(128, 256, 3, padding=1)
+        self.conv12 = nn.Conv2d(128, 256, 5)
         self.bn12 = nn.BatchNorm2d(256)
-        self.conv13 = nn.Conv2d(256, 256, 3, padding=1)
+        self.conv13 = nn.Conv2d(256, 256, 5)
         self.bn13 = nn.BatchNorm2d(256)
         self.shortcut2 = nn.Sequential(
                 nn.Conv2d(128, 256, 1, padding=0, bias=False),
@@ -246,19 +246,19 @@ class BaseNet(nn.Module):
         )
         self.pool2 = nn.MaxPool2d(2, 2)
 
-        self.conv14 = nn.Conv2d(256, 256, 3, padding=1)
+        self.conv14 = nn.Conv2d(256, 256, 5)
         self.bn14 = nn.BatchNorm2d(256)
-        self.conv15 = nn.Conv2d(256, 256, 3, padding=1)
+        self.conv15 = nn.Conv2d(256, 256, 5)
         self.bn15 = nn.BatchNorm2d(256)
 
-        self.conv16 = nn.Conv2d(256, 256, 3, padding=1)
+        self.conv16 = nn.Conv2d(256, 256, 5)
         self.bn16 = nn.BatchNorm2d(256)
-        self.conv17 = nn.Conv2d(256, 256, 3, padding=1)
+        self.conv17 = nn.Conv2d(256, 256, 5)
         self.bn17 = nn.BatchNorm2d(256)
 
-        self.conv18 = nn.Conv2d(256, 512, 3, padding=1)
+        self.conv18 = nn.Conv2d(256, 512, 5)
         self.bn18 = nn.BatchNorm2d(512)
-        self.conv19 = nn.Conv2d(512, 512, 3, padding=1)
+        self.conv19 = nn.Conv2d(512, 512, 5)
         self.bn19 = nn.BatchNorm2d(512)
         self.shortcut3 = nn.Sequential(
                 nn.Conv2d(256, 512, 1, padding=0, bias=False),
@@ -267,19 +267,19 @@ class BaseNet(nn.Module):
 
         self.pool3 = nn.MaxPool2d(2, 2)
 
-        self.conv20 = nn.Conv2d(512, 512, 3, padding=1)
+        self.conv20 = nn.Conv2d(512, 512, 5)
         self.bn20 = nn.BatchNorm2d(512)
-        self.conv21 = nn.Conv2d(512, 512, 3, padding=1)
+        self.conv21 = nn.Conv2d(512, 512, 5)
         self.bn21 = nn.BatchNorm2d(512)
 
-        self.conv22 = nn.Conv2d(512, 512, 3, padding=1)
+        self.conv22 = nn.Conv2d(512, 512, 5)
         self.bn22 = nn.BatchNorm2d(512)
-        self.conv23 = nn.Conv2d(512, 512, 3, padding=1)
+        self.conv23 = nn.Conv2d(512, 512, 5)
         self.bn23 = nn.BatchNorm2d(512)
 
-        self.conv24 = nn.Conv2d(512, 1024, 3, padding=1)
+        self.conv24 = nn.Conv2d(512, 1024, 5)
         self.bn24 = nn.BatchNorm2d(1024)
-        self.conv25 = nn.Conv2d(1024, 1024, 3, padding=1)
+        self.conv25 = nn.Conv2d(1024, 1024, 5)
         self.bn25 = nn.BatchNorm2d(1024)
         self.shortcut4 = nn.Sequential(
                 nn.Conv2d(512, 1024, 1, padding=0, bias=False),
@@ -291,13 +291,13 @@ class BaseNet(nn.Module):
                 nn.ReLU(inplace=True),
                 nn.Linear(512, TOTAL_CLASSES)
         )
-        '''
+
 
     def forward(self, x):
 
         # <<TODO#3&#4>> Based on the above edits, you'll have
         # to edit the forward pass description here.
-
+        '''
         x = self.pool(F.relu(self.conv1(x)))
         # Output size = 28//2 x 28//2 = 14 x 14
 
@@ -369,7 +369,7 @@ class BaseNet(nn.Module):
 
         x = x.view(-1, 1024)
         x = self.fc_net(x)
-        '''
+
         return x
 
 print('1')
