@@ -15,8 +15,8 @@
       <file leaf-file-name="cifar100_cs543.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cifar100_cs543.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="39" column="22" lean-forward="true" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+            <state relative-caret-position="455">
+              <caret line="52" column="26" lean-forward="true" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
               <folding>
                 <element signature="e#694#704#0" expanded="true" />
               </folding>
@@ -27,8 +27,8 @@
       <file leaf-file-name="cs543_dataset.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cs543_dataset.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="77" column="45" lean-forward="true" selection-start-line="77" selection-start-column="45" selection-end-line="77" selection-end-column="45" />
+            <state relative-caret-position="2011">
+              <caret line="150" column="23" lean-forward="true" selection-start-line="150" selection-start-column="23" selection-end-line="150" selection-end-column="23" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -53,8 +53,9 @@
       <find>cuda</find>
       <find>filename</find>
       <find>check_integrity</find>
-      <find>PATH_TO_CIFAR100_CS543</find>
       <find>tgz_md5</find>
+      <find>PATH_TO_CIFAR100_CS543</find>
+      <find>base_folder</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -623,8 +624,8 @@
     <entry file="file://$PROJECT_DIR$/cifar-100-cs543-python/test.py" />
     <entry file="file://$PROJECT_DIR$/cs543_dataset.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="77" column="45" lean-forward="true" selection-start-line="77" selection-start-column="45" selection-end-line="77" selection-end-column="45" />
+        <state relative-caret-position="2011">
+          <caret line="150" column="23" lean-forward="true" selection-start-line="150" selection-start-column="23" selection-end-line="150" selection-end-column="23" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
@@ -633,8 +634,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cifar100_cs543.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="39" column="22" lean-forward="true" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+        <state relative-caret-position="455">
+          <caret line="52" column="26" lean-forward="true" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
           <folding>
             <element signature="e#694#704#0" expanded="true" />
           </folding>
