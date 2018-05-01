@@ -15,8 +15,8 @@
       <file leaf-file-name="cifar100_cs543.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cifar100_cs543.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="72" column="32" lean-forward="false" selection-start-line="72" selection-start-column="28" selection-end-line="72" selection-end-column="32" />
+            <state relative-caret-position="356">
+              <caret line="54" column="44" lean-forward="true" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
               <folding>
                 <element signature="e#694#704#0" expanded="true" />
               </folding>
@@ -37,7 +37,7 @@
       <file leaf-file-name="cs543_dataset.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cs543_dataset.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
+            <state relative-caret-position="-35">
               <caret line="156" column="0" lean-forward="false" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
@@ -57,11 +57,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>PATH_TO_CIFAR100_CS543</find>
       <find>channels</find>
       <find>F</find>
       <find>gpu</find>
       <find>cuda</find>
+      <find>PATH_TO_CIFAR100_CS543</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -73,8 +73,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1609" />
-    <option name="y" value="39" />
+    <option name="x" value="1689" />
+    <option name="y" value="46" />
     <option name="width" value="1484" />
     <option name="height" value="991" />
   </component>
@@ -266,7 +266,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1609" y="39" width="1484" height="991" extended-state="0" />
+    <frame x="1689" y="46" width="1484" height="991" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22330096" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -383,7 +383,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cs543_dataset.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
+        <state relative-caret-position="-35">
           <caret line="156" column="0" lean-forward="false" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
@@ -393,8 +393,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cifar100_cs543.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="72" column="32" lean-forward="false" selection-start-line="72" selection-start-column="28" selection-end-line="72" selection-end-column="32" />
+        <state relative-caret-position="356">
+          <caret line="54" column="44" lean-forward="true" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
           <folding>
             <element signature="e#694#704#0" expanded="true" />
           </folding>
