@@ -316,6 +316,8 @@ class BaseNet(nn.Module):
 
         tempx = F.relu(self.bn2(self.conv2(x)))
         tempx = F.relu(self.bn3(self.conv2(tempx)))
+        print(tempx.size())
+        print(x.size())
         assert tempx.size() == x.size()
         x = tempx + x
 
