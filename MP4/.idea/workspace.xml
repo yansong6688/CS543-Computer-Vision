@@ -12,11 +12,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="cifar100_cs543.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cifar100_cs543.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cifar100_cs543.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="56" column="39" lean-forward="true" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+            <state relative-caret-position="274">
+              <caret line="123" column="53" lean-forward="false" selection-start-line="123" selection-start-column="31" selection-end-line="123" selection-end-column="53" />
               <folding>
                 <element signature="e#694#704#0" expanded="true" />
               </folding>
@@ -24,11 +24,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cs543_dataset.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="cs543_dataset.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cs543_dataset.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="75" column="76" lean-forward="true" selection-start-line="75" selection-start-column="76" selection-end-line="75" selection-end-column="76" />
+            <state relative-caret-position="419">
+              <caret line="77" column="48" lean-forward="true" selection-start-line="77" selection-start-column="48" selection-end-line="77" selection-end-column="48" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -47,11 +47,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>PATH_TO_CIFAR100_CS543</find>
       <find>channels</find>
       <find>F</find>
       <find>gpu</find>
       <find>cuda</find>
+      <find>PATH_TO_CIFAR100_CS543</find>
+      <find>filename</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -59,6 +60,7 @@
       <list>
         <option value="$PROJECT_DIR$/cifar-100-cs543-python/test.py" />
         <option value="$PROJECT_DIR$/cifar100_cs543.py" />
+        <option value="$PROJECT_DIR$/cs543_dataset.py" />
       </list>
     </option>
   </component>
@@ -617,22 +619,22 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cifar-100-cs543-python/test.py" />
-    <entry file="file://$PROJECT_DIR$/cs543_dataset.py">
+    <entry file="file://$PROJECT_DIR$/cifar100_cs543.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="75" column="76" lean-forward="true" selection-start-line="75" selection-start-column="76" selection-end-line="75" selection-end-column="76" />
+        <state relative-caret-position="274">
+          <caret line="123" column="53" lean-forward="false" selection-start-line="123" selection-start-column="31" selection-end-line="123" selection-end-column="53" />
           <folding>
-            <element signature="e#0#37#0" expanded="true" />
+            <element signature="e#694#704#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cifar100_cs543.py">
+    <entry file="file://$PROJECT_DIR$/cs543_dataset.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="56" column="39" lean-forward="true" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+        <state relative-caret-position="419">
+          <caret line="77" column="48" lean-forward="true" selection-start-line="77" selection-start-column="48" selection-end-line="77" selection-end-column="48" />
           <folding>
-            <element signature="e#694#704#0" expanded="true" />
+            <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
