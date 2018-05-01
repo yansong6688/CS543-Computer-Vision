@@ -22,6 +22,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
+import time
 import os.path
 import sys
 import torch
@@ -372,18 +373,18 @@ class BaseNet(nn.Module):
 
         return x
 
-print('1')
+
 # Create an instance of the nn.module class defined above:
 # net = BaseNet()
-# net = DPN92()
-net = ResNet50()
+net = DPN92()
+# net = ResNet50()
 
-print('2')
+
 # For training on GPU, we need to transfer net and data onto the GPU
 # http://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html#training-on-gpu
 if IS_GPU:
     net = net.cuda()
-print('3')
+
 ########################################################################
 # 3. Define a Loss function and optimizer
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -397,7 +398,7 @@ criterion = nn.CrossEntropyLoss()
 # Tune the learning rate.
 # See whether the momentum is useful or not
 optimizer = optim.SGD(net.parameters(), lr=0.005, momentum=0.9)
-print('4')
+
 plt.ioff()
 fig = plt.figure()
 train_loss_over_epochs = []
@@ -411,9 +412,10 @@ val_accuracy_over_epochs = []
 # epoch and plot these values over the number of epochs
 # Nothing to change here
 # -----------------------------
-print('5')
+
 for epoch in range(EPOCHS):  # loop over the dataset multiple times
     print('epoch ', epoch)
+    start = time.time()
     running_loss = 0.0
     for i, data in enumerate(trainloader, 0):
         # get the inputs
@@ -456,6 +458,8 @@ for epoch in range(EPOCHS):  # loop over the dataset multiple times
 
     train_loss_over_epochs.append(running_loss)
     val_accuracy_over_epochs.append(val_accuracy)
+
+    print('time:', time.time() - start)
 # -----------------------------
 
 
