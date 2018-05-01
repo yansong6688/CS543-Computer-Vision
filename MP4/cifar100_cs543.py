@@ -203,22 +203,22 @@ class BaseNet(nn.Module):
         )
         '''
 
-        self.conv1 = nn.Conv2d(3, 64, 5, padding=1)
+        self.conv1 = nn.Conv2d(3, 64, 5, padding=3)
         self.bn1 = nn.BatchNorm2d(64)
 
-        self.conv2 = nn.Conv2d(64, 64, 5, padding=1)
+        self.conv2 = nn.Conv2d(64, 64, 5, padding=3)
         self.bn2 = nn.BatchNorm2d(64)
-        self.conv3 = nn.Conv2d(64, 64, 5, padding=1)
+        self.conv3 = nn.Conv2d(64, 64, 5, padding=3)
         self.bn3 = nn.BatchNorm2d(64)
 
-        self.conv4 = nn.Conv2d(64, 64, 5, padding=1)
+        self.conv4 = nn.Conv2d(64, 64, 5, padding=3)
         self.bn4 = nn.BatchNorm2d(64)
-        self.conv5 = nn.Conv2d(64, 64, 5, padding=1)
+        self.conv5 = nn.Conv2d(64, 64, 5, padding=3)
         self.bn5 = nn.BatchNorm2d(64)
 
-        self.conv6 = nn.Conv2d(64, 128, 5, padding=1)
+        self.conv6 = nn.Conv2d(64, 128, 5, padding=3)
         self.bn6 = nn.BatchNorm2d(128)
-        self.conv7 = nn.Conv2d(128, 128, 5, padding=1)
+        self.conv7 = nn.Conv2d(128, 128, 5, padding=3)
         self.bn7 = nn.BatchNorm2d(128)
         self.shortcut1 = nn.Sequential(
                 nn.Conv2d(64, 128, 1, padding=0, bias=False),
@@ -226,19 +226,19 @@ class BaseNet(nn.Module):
         )
         self.pool1 = nn.MaxPool2d(2, 2)
 
-        self.conv8 = nn.Conv2d(128, 128, 5, padding=1)
+        self.conv8 = nn.Conv2d(128, 128, 5, padding=3)
         self.bn8 = nn.BatchNorm2d(128)
-        self.conv9 = nn.Conv2d(128, 128, 5, padding=1)
+        self.conv9 = nn.Conv2d(128, 128, 5, padding=3)
         self.bn9 = nn.BatchNorm2d(128)
 
-        self.conv10 = nn.Conv2d(128, 128, 5, padding=1)
+        self.conv10 = nn.Conv2d(128, 128, 5, padding=3)
         self.bn10 = nn.BatchNorm2d(128)
-        self.conv11 = nn.Conv2d(128, 128, 5, padding=1)
+        self.conv11 = nn.Conv2d(128, 128, 5, padding=3)
         self.bn11 = nn.BatchNorm2d(128)
 
-        self.conv12 = nn.Conv2d(128, 256, 5, padding=1)
+        self.conv12 = nn.Conv2d(128, 256, 5, padding=3)
         self.bn12 = nn.BatchNorm2d(256)
-        self.conv13 = nn.Conv2d(256, 256, 5, padding=1)
+        self.conv13 = nn.Conv2d(256, 256, 5, padding=3)
         self.bn13 = nn.BatchNorm2d(256)
         self.shortcut2 = nn.Sequential(
                 nn.Conv2d(128, 256, 1, padding=0, bias=False),
