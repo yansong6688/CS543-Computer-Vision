@@ -71,6 +71,8 @@ class CIFAR10_CS543(data.Dataset):
         self.target_transform = target_transform
 
         fpath = os.path.join(root, self.filename)
+        print('fpath =', fpath)
+        print('tgz_md5 =', self.tgz_md5)
         if not check_integrity(fpath, self.tgz_md5):
             raise RuntimeError('You have not placed the'+
                                ' cifar-100-cs543-python.tar.gz file in the'+

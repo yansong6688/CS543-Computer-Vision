@@ -15,8 +15,8 @@
       <file leaf-file-name="cifar100_cs543.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cifar100_cs543.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+            <state relative-caret-position="464">
+              <caret line="55" column="41" lean-forward="false" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
               <folding>
                 <element signature="e#694#704#0" expanded="true" />
               </folding>
@@ -27,8 +27,8 @@
       <file leaf-file-name="cs543_dataset.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cs543_dataset.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="72" column="49" lean-forward="false" selection-start-line="72" selection-start-column="49" selection-end-line="72" selection-end-column="49" />
+            <state relative-caret-position="189">
+              <caret line="77" column="45" lean-forward="true" selection-start-line="77" selection-start-column="45" selection-end-line="77" selection-end-column="45" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -51,16 +51,18 @@
       <find>F</find>
       <find>gpu</find>
       <find>cuda</find>
-      <find>PATH_TO_CIFAR100_CS543</find>
       <find>filename</find>
+      <find>check_integrity</find>
+      <find>PATH_TO_CIFAR100_CS543</find>
+      <find>tgz_md5</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/cifar-100-cs543-python/test.py" />
-        <option value="$PROJECT_DIR$/cs543_dataset.py" />
         <option value="$PROJECT_DIR$/cifar100_cs543.py" />
+        <option value="$PROJECT_DIR$/cs543_dataset.py" />
       </list>
     </option>
   </component>
@@ -621,8 +623,8 @@
     <entry file="file://$PROJECT_DIR$/cifar-100-cs543-python/test.py" />
     <entry file="file://$PROJECT_DIR$/cs543_dataset.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="72" column="49" lean-forward="false" selection-start-line="72" selection-start-column="49" selection-end-line="72" selection-end-column="49" />
+        <state relative-caret-position="189">
+          <caret line="77" column="45" lean-forward="true" selection-start-line="77" selection-start-column="45" selection-end-line="77" selection-end-column="45" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
@@ -631,8 +633,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cifar100_cs543.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+        <state relative-caret-position="464">
+          <caret line="55" column="41" lean-forward="false" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
           <folding>
             <element signature="e#694#704#0" expanded="true" />
           </folding>

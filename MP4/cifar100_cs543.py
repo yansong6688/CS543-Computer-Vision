@@ -50,7 +50,7 @@ TEST_BS = 256
 TOTAL_CLASSES = 100
 TRAIN_BS = 32
 # PATH_TO_CIFAR100_CS543 = "/projects/training/baps/CS543/"
-PATH_TO_CIFAR100_CS543 = "/home/niejx1994/CS543-Computer-Vision/MP4/"
+PATH_TO_CIFAR100_CS543 = "./"
 
 def calculate_val_accuracy(valloader, is_gpu):
     """ Util function to calculate val set accuracy,
