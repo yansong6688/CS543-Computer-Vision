@@ -12,11 +12,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="cifar100_cs543.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="cifar100_cs543.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cifar100_cs543.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="123" column="53" lean-forward="false" selection-start-line="123" selection-start-column="31" selection-end-line="123" selection-end-column="53" />
+            <state relative-caret-position="457">
+              <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
               <folding>
                 <element signature="e#694#704#0" expanded="true" />
               </folding>
@@ -24,11 +24,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cs543_dataset.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cs543_dataset.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cs543_dataset.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="77" column="48" lean-forward="true" selection-start-line="77" selection-start-column="48" selection-end-line="77" selection-end-column="48" />
+            <state relative-caret-position="344">
+              <caret line="72" column="49" lean-forward="false" selection-start-line="72" selection-start-column="49" selection-end-line="72" selection-end-column="49" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -59,8 +59,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/cifar-100-cs543-python/test.py" />
-        <option value="$PROJECT_DIR$/cifar100_cs543.py" />
         <option value="$PROJECT_DIR$/cs543_dataset.py" />
+        <option value="$PROJECT_DIR$/cifar100_cs543.py" />
       </list>
     </option>
   </component>
@@ -619,22 +619,22 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cifar-100-cs543-python/test.py" />
-    <entry file="file://$PROJECT_DIR$/cifar100_cs543.py">
+    <entry file="file://$PROJECT_DIR$/cs543_dataset.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="123" column="53" lean-forward="false" selection-start-line="123" selection-start-column="31" selection-end-line="123" selection-end-column="53" />
+        <state relative-caret-position="344">
+          <caret line="72" column="49" lean-forward="false" selection-start-line="72" selection-start-column="49" selection-end-line="72" selection-end-column="49" />
           <folding>
-            <element signature="e#694#704#0" expanded="true" />
+            <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cs543_dataset.py">
+    <entry file="file://$PROJECT_DIR$/cifar100_cs543.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="77" column="48" lean-forward="true" selection-start-line="77" selection-start-column="48" selection-end-line="77" selection-end-column="48" />
+        <state relative-caret-position="457">
+          <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding>
-            <element signature="e#0#37#0" expanded="true" />
+            <element signature="e#694#704#0" expanded="true" />
           </folding>
         </state>
       </provider>
