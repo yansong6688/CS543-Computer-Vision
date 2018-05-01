@@ -33,6 +33,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 from dpn import *
+from resnet import *
 
 from cs543_dataset import CIFAR100_CS543
 
@@ -373,8 +374,9 @@ class BaseNet(nn.Module):
 
 print('1')
 # Create an instance of the nn.module class defined above:
-net = BaseNet()
-#net = DPN92()
+# net = BaseNet()
+# net = DPN92()
+net = ResNet50()
 
 print('2')
 # For training on GPU, we need to transfer net and data onto the GPU
