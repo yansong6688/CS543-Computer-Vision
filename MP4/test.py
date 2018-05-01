@@ -22,7 +22,8 @@ def check_integrity(fpath, md5):
 
 PATH_TO_CIFAR100_CS543 = "./"
 FILENAME = "cifar-100-cs543-python.tar"
-tgz_md5 = 'e68a4c763591787a0b39fe2209371f32'
+#tgz_md5 = 'e68a4c763591787a0b39fe2209371f32'
+tgz_md5 = '20007be0e070454987ad7dbb2149faad'
 fpath = os.path.join(PATH_TO_CIFAR100_CS543, FILENAME)
 print('fpath =', fpath)
 print('tgz_md5 =', tgz_md5)
