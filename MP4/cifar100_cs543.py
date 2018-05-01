@@ -185,17 +185,17 @@ class BaseNet(nn.Module):
         # (right now set to 5) in all conv layers.
         # Do not have a maxpool layer after every conv layer in your
         # deeper network as it leads to too much loss of information.
-        '''
+
         self.conv1 = nn.Conv2d(3, 6, 5)
         self.pool = nn.MaxPool2d(2, 2)
         self.conv2 = nn.Conv2d(6, 16, 5)
-        '''
+
         # <<TODO#3>> Add more linear (fc) layers
         # <<TODO#4>> Add normalization layers after linear and
         # experiment inserting them before or after ReLU (nn.BatchNorm1d)
         # More on nn.sequential:
         # http://pytorch.org/docs/master/nn.html#torch.nn.Sequential
-        '''
+
         self.fc_net = nn.Sequential(
             nn.Linear(16 * 5 * 5, TOTAL_CLASSES//2),
             nn.ReLU(inplace=True),
@@ -291,13 +291,13 @@ class BaseNet(nn.Module):
                 nn.ReLU(inplace=True),
                 nn.Linear(512, TOTAL_CLASSES)
         )
-
+        '''
 
     def forward(self, x):
 
         # <<TODO#3&#4>> Based on the above edits, you'll have
         # to edit the forward pass description here.
-        '''
+
         x = self.pool(F.relu(self.conv1(x)))
         # Output size = 28//2 x 28//2 = 14 x 14
 
@@ -369,13 +369,13 @@ class BaseNet(nn.Module):
 
         x = x.view(-1, 1024)
         x = self.fc_net(x)
-
+        '''
         return x
 
 print('1')
 # Create an instance of the nn.module class defined above:
-#net = BaseNet()
-net = DPN92()
+net = BaseNet()
+#net = DPN92()
 
 print('2')
 # For training on GPU, we need to transfer net and data onto the GPU
