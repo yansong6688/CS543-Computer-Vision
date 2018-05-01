@@ -47,9 +47,9 @@ EPOCHS = 15
 # ---------
 
 IS_GPU = True
-TEST_BS = 256
+TEST_BS = 16
 TOTAL_CLASSES = 100
-TRAIN_BS = 32
+TRAIN_BS = 16
 # PATH_TO_CIFAR100_CS543 = "/projects/training/baps/CS543/"
 PATH_TO_CIFAR100_CS543 = "./"
 
