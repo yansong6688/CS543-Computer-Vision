@@ -15,8 +15,8 @@
       <file leaf-file-name="cifar100_cs543.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cifar100_cs543.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="429" column="18" lean-forward="true" selection-start-line="429" selection-start-column="18" selection-end-line="429" selection-end-column="18" />
+            <state relative-caret-position="319">
+              <caret line="288" column="39" lean-forward="true" selection-start-line="288" selection-start-column="39" selection-end-line="288" selection-end-column="39" />
               <folding>
                 <element signature="e#694#704#0" expanded="true" />
               </folding>
@@ -707,8 +707,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cifar100_cs543.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="429" column="18" lean-forward="true" selection-start-line="429" selection-start-column="18" selection-end-line="429" selection-end-column="18" />
+        <state relative-caret-position="319">
+          <caret line="288" column="39" lean-forward="true" selection-start-line="288" selection-start-column="39" selection-end-line="288" selection-end-column="39" />
           <folding>
             <element signature="e#694#704#0" expanded="true" />
           </folding>

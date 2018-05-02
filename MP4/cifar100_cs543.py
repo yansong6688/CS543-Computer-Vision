@@ -379,8 +379,8 @@ class BaseNet(nn.Module):
 
 
 # Create an instance of the nn.module class defined above:
-# net = BaseNet()
-net = DPN92()
+net = BaseNet()
+# net = DPN92()
 # net = ResNet50()
 
 
@@ -422,8 +422,10 @@ for epoch in range(EPOCHS):  # loop over the dataset multiple times
     start = time.time()
     running_loss = 0.0
     for i, data in enumerate(trainloader, 0):
+        print('i =', i)
         # get the inputs
         inputs, labels = data
+        print('input size =', input.size())
 
         if IS_GPU:
             inputs = inputs.cuda()
