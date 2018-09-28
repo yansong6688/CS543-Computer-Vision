@@ -202,8 +202,8 @@ class CIFAR100_CS543(CIFAR10_CS543):
     """
     base_folder = 'cifar-100-cs543-python'
     filename = "cifar-100-cs543-python.tar.gz"
-    #tgz_md5 = 'e68a4c763591787a0b39fe2209371f32'
-    tgz_md5 = '20007be0e070454987ad7dbb2149faad'
+    tgz_md5 = 'e68a4c763591787a0b39fe2209371f32'
+    #tgz_md5 = '20007be0e070454987ad7dbb2149faad'
     train_list = [
         ['train_cs543', '49eee854445c1e2ebe796cd93c20bb0f'],
     ]

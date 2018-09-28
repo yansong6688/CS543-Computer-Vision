@@ -313,67 +313,78 @@ class BaseNet(nn.Module):
         '''
         # No softmax is needed as the loss function in step 3
         # takes care of that
-
+        # print('316:', x.size())
         x = F.relu(self.bn1(self.conv1(x)))
 
         tempx = F.relu(self.bn2(self.conv2(x)))
         tempx = F.relu(self.bn3(self.conv2(tempx)))
         x = tempx + x
+        # print('322:', x.size())
 
         tempx = F.relu(self.bn4(self.conv4(x)))
         tempx = F.relu(self.bn5(self.conv5(tempx)))
         x = tempx + x
+        # print('327:', x.size())
 
         tempx = F.relu(self.bn6(self.conv6(x)))
         tempx = F.relu(self.bn7(self.conv7(tempx)))
         x = tempx + self.shortcut1(x)
         x = self.pool1(x)
+        # print('333:', x.size())
 
         tempx = F.relu(self.bn8(self.conv8(x)))
         tempx = F.relu(self.bn9(self.conv9(tempx)))
         x = tempx + x
+        # print('338:', x.size())
 
         tempx = F.relu(self.bn10(self.conv10(x)))
         tempx = F.relu(self.bn11(self.conv11(tempx)))
         x = tempx + x
+        # print('343:', x.size())
 
         tempx = F.relu(self.bn12(self.conv12(x)))
         tempx = F.relu(self.bn13(self.conv13(tempx)))
         x = tempx + self.shortcut2(x)
         x = self.pool2(x)
+        # print('349:', x.size())
 
         tempx = F.relu(self.bn14(self.conv14(x)))
         tempx = F.relu(self.bn15(self.conv15(tempx)))
         x = tempx + x
+        # print('354:', x.size())
 
         tempx = F.relu(self.bn16(self.conv16(x)))
         tempx = F.relu(self.bn17(self.conv17(tempx)))
         x = tempx + x
+        # print('359:', x.size())
 
         tempx = F.relu(self.bn18(self.conv18(x)))
         tempx = F.relu(self.bn19(self.conv19(tempx)))
         x = tempx + self.shortcut3(x)
         x = self.pool3(x)
+        # print('365:', x.size())
 
         tempx = F.relu(self.bn20(self.conv20(x)))
         tempx = F.relu(self.bn21(self.conv21(tempx)))
         x = tempx + x
+        # print('370:', x.size())
 
         tempx = F.relu(self.bn22(self.conv22(x)))
         tempx = F.relu(self.bn23(self.conv23(tempx)))
         x = tempx + x
+        # print('375:', x.size())
 
         tempx = F.relu(self.bn24(self.conv24(x)))
         tempx = F.relu(self.bn25(self.conv25(tempx)))
         x = tempx + self.shortcut4(x)
-        print('369:', x.size())
+        # print('380:', x.size())
         x = self.pool4(x)
-        print('371:', x.size())
+        # print('382:', x.size())
 
         x = x.view(-1, 1024)
-        print('374:', x.size())
+        # print('385:', x.size())
         x = self.fc_net(x)
-        print('376:', x.size())
+        # print('387:', x.size())
 
         return x
 
@@ -383,6 +394,10 @@ net = BaseNet()
 # net = DPN92()
 # net = ResNet50()
 
+total_params = sum(p.numel() for p in net.parameters())
+print("total params =", total_params)
+trainable_params = sum(p.numel() for p in net.parameters() if p.requires_grad)
+print("trainable params =", trainable_params)
 
 # For training on GPU, we need to transfer net and data onto the GPU
 # http://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html#training-on-gpu
@@ -422,10 +437,8 @@ for epoch in range(EPOCHS):  # loop over the dataset multiple times
     start = time.time()
     running_loss = 0.0
     for i, data in enumerate(trainloader, 0):
-        print('i =', i)
         # get the inputs
         inputs, labels = data
-        print('input size =', input.size())
 
         if IS_GPU:
             inputs = inputs.cuda()
